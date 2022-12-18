@@ -1,19 +1,12 @@
 #include <stdio.h>
-#include <string.h>
-
-struct Name
+int foo(int n)
 {
-    char str[20];
-};
-
+    if (n == 0)
+        return 0;
+    return foo(n - 1) + n;
+}
 int main()
 {
-    struct Name st1, st2;
-    strcpy(st1.str, "ProgrammingHero");
-    st2 = st1;
-    st1.str[0] = 'p';
-
-    printf("%s", st2.str);
-
+    printf("%d\n", foo(6));
     return 0;
 }
